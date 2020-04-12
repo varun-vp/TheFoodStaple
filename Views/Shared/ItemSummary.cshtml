@@ -1,0 +1,62 @@
+﻿@model Item
+
+
+    <div class="col-sm-3 col-md-3 col-lg-4">
+        <br />
+        <div class="img-thumbnail">
+            <img src="~/Images/Fruits/@Model.ImageUrl" style="width:80%;height:30%;" alt="Img" />
+            <hr />
+            <div class="figure-caption" >
+                <h3 class="pull-right">@Model.ItemPrice.ToString("c")</h3>
+                <h3>
+                    <a>@Model.ItemName</a>
+                </h3>
+                <p>@Model.ShortDescription</p>
+            </div>
+            <div class="addToCart text-right">
+                @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Add To Cart
+                </button>*@
+                    <p class="button ">
+                    <a class="btn btn-success" id="cartButton" asp-controller="ShoppingCarts" asp-action="AddToShoppingCart" asp-route-ItemId="@Model.ItemId">
+                        Add to cart
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- Modal -->
+@*<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+          <p class="button ">
+              <a class="button btn" id="cartButton" asp-controller="ShoppingCarts" asp-action="AddToShoppingCart" asp-route-ItemId="@Model.ItemId">
+                  Ok
+              </a>
+              <a class="button btn" id="cartButton" asp-controller="ShoppingCarts" asp-action="Index">
+                  Check Order Summary
+              </a>
+            </p>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+       </div>
+    </div>
+  </div>
+</div>*@
+
+

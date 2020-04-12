@@ -1,0 +1,9 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (!SignInManager.IsSignedIn(User))
+{
+    <h5 class="test-light">To Access This Page Please Login First</h5>
+}

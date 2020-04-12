@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>        
+    </tr>
+        @foreach(var role in Model)
+        {
+            <tr>
+                <td>@role.Id</td>
+                <td>@role.Name</td>
+            </tr>
+        }
+    
+</table>
