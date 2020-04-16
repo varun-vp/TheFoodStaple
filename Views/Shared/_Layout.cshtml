@@ -181,22 +181,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="Seller">Seller</a>
                                 </li>
-                                @*<li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="YourOrder">User Order Details</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="GetOrder">Seller Order Details</a>
-                                </li>*@
                             }
                             else
                             if (@User.IsInRole("Seller"))
                             {
-                                @*<li class="nav-item">
+                                <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="AddFood">Add Food</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="GetOrder">Order Details</a>
-                                </li>*@
                             }
                             else
                             if (@User.IsInRole("User"))

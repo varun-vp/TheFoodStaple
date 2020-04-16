@@ -69,7 +69,10 @@ namespace TheFoodStapleEx.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            ViewData["roles"] = _roleManager.Roles.ToList();
+
+
+            ViewData["roles"] = _roleManager.Roles.Where(p=>p.Name != "Admin").ToList();
+            
             ReturnUrl = returnUrl;
             
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
