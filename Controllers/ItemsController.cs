@@ -36,7 +36,7 @@ namespace TheFoodStapleEx.Controllers
             string _category = category;
             IEnumerable<Item> items;
             string currentCategory = string.Empty;
-            if(string.IsNullOrEmpty(category))
+            if(string.IsNullOrEmpty(_category))
             {
                 items = _itemRepository.Items.OrderBy(n => n.ItemId);
                 currentCategory = "All of the above";
@@ -54,12 +54,12 @@ namespace TheFoodStapleEx.Controllers
                 else if (string.Equals("Fruit", _category, StringComparison.OrdinalIgnoreCase))
                 {
                     items = _itemRepository.Items.Where(p => p.IType.ITypeName.Equals("Fruit")).OrderBy(n => n.ItemName);
+                    
                 }
                 else 
                 {
                     items = _itemRepository.Items.Where(p => p.IType.ITypeName.Equals("Vegetable")).OrderBy(n => n.ItemName);
                 }
-                
                 currentCategory = _category;
             }
             var itemListViewModel = new ItemListViewModel

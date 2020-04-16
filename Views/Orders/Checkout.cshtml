@@ -1,17 +1,17 @@
 ﻿@model Order
-
+<br />
     <h3 class="text-center">You are just one step away from ordering your drinks.</h3>
-<div class="row orderForm  align-items-center checkout-form">
-    
-    <br />
-    <form asp-action="Checkout" method="post" class="form-horizontal" role="form">
-        <div class="form-group">
+<div >    
+   
+    <form asp-action="Checkout" method="post"  role="form" class="checkout-form">
+        @*<div class="form-group">*@
             @*<label asp-for="LastName" class="control-label"></label>*@
-            <div>
+            <div class="form-group">
                 <input asp-for="LastName" class="form-control-checkout" placeholder="Last Name" />
+                <br />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
-        </div>
+        @*  </div>*@
         <div class="form-group">
             @*<label asp-for="FirstName" class="col-md-2 control-label"></label>*@
             <div class="justify-content-center">
@@ -84,11 +84,11 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="btn-group col-md-offset-2 col-md-8">
+            <div class="btn-group col-md-offset-2 col-md-8 text-black-50">
                 <input class="btn btn-success text-black-50" style="width:auto" type="submit" value="Complete order" />
                 @*<input class="btn btn-default" type="submit" value="Return " />*@
             </div>
         </div>
-
+        <br />
     </form>
 </div>

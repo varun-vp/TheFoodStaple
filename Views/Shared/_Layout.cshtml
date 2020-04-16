@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 @using Microsoft.AspNetCore.Identity
 
-@inject ShoppingCart sc
+@inject ShoppingCart shoppingCart
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 <html lang="en">
@@ -67,7 +67,7 @@
 
         .checkout-form {
             padding: 30px;
-            width: 450px;
+            width: 500px;
             height: auto;
             border: 2px solid black;
             margin-left: 290px;
@@ -86,7 +86,7 @@
 
         .form-control {
             padding: 10px;
-            width: 80%;
+            
             border-radius: 25px;
             border: 4px solid #3333cc;
             height: 50px;
@@ -98,7 +98,7 @@
 
         .form-control-checkout {
             padding: 5px;
-            width: 90%;
+            width:95%;
             border-radius: 25px;
             border: 4px solid #3333cc;
             height: 50px;
@@ -115,6 +115,7 @@
             background-color: yellow;
             border: 2px solid black;
             border-radius: 25px;
+            color: black;
         }
 
             .btn:hover {
@@ -152,10 +153,10 @@
                             <a class="nav-link text-light animated pulse delay-3s" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
 
                         <li>
@@ -204,22 +205,21 @@
                                     <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="User">Account</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="YourOrder">Your Orders</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="YourOrder">Orders</a>
                                 </li>
                             }
                         }
                         <li class="nav-item">
                             @await Component.InvokeAsync("ShoppingCartSummary")
                         </li>
-                        <div>
-                            <form class="nav navbar-form navbar-right" asp-controller="Items" asp-action="Search" method="get">
-                                <div class="form-group" style="width:auto;height:5px">
+                        <li class="nav-item">
+                            @*<div class="form-group" style="width:auto;height:5px">*@
+                            @*<input type="text" class="form-control" placeholder="Search for a Item" name="searchString" asp-controller="Items" asp-action="Search" method="get" value="@ViewData["searchString"]">*@
+                            <form class="nav navbar-form navbar-right" asp-controller="Items" asp-action="Search" method="get" style="width:auto;height:3px">
                                     <input type="text" class="form-control" placeholder="Search for a Item" name="searchString" value="@ViewData["searchString"]">
-                                </div>
                             </form>
-                        </div>
+                        </li>
                     </ul>
-
                 </div>
             </div>
         </nav>
@@ -230,9 +230,9 @@
             @RenderBody()
         </main>
     </div>
-    @if (sc.ShoppingCartItems.Count > 0)
+    @if (shoppingCart.ShoppingCartItems.Count > 0)
     {
-        <a class="btn btn-success align-content-center" id="cartButton" asp-controller="ShoppingCarts" asp-action="Index" style="width:auto">
+        <a class="btn align-content-center text-black-50" id="cartButton" asp-controller="ShoppingCarts" asp-action="Index" style="width:auto;margin-left:50%">
             Check Order Summary
         </a>
     }
@@ -249,7 +249,7 @@
 
 
             <div class="col-lg-4"  >
-                <h3 style="text-align:center;background-color:white">&copy;TheFoodStaple</h3>
+                <h3 style="text-align:center;color:white">&copy;TheFoodStaple</h3>
 
             </div>
 

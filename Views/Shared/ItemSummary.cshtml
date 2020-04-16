@@ -6,12 +6,13 @@
         <div class="img-thumbnail">
             <img src="~/Images/Fruits/@Model.ImageUrl" style="width:80%;height:30%;" alt="Img" />
             <hr />
-            <div class="figure-caption" >
+            <div class="figure-caption">
                 <h3 class="pull-right">@Model.ItemPrice.ToString("c")</h3>
                 <h3>
                     <a>@Model.ItemName</a>
                 </h3>
                 <p>@Model.ShortDescription</p>
+                <p>@Model.Category.CategoryName</p>
             </div>
             <div class="addToCart text-right">
                 @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
