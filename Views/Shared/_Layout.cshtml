@@ -55,13 +55,13 @@
         }
 
         .box {
-            padding: 30px;
+            padding: 40px;
             width: 300px;
             height: auto;
             border: 2px solid black;
             margin-left: 390px;
-            margin-top: 90px;
-            background-color: black;
+            margin-top: 30px;
+            
             border-radius: 12px;
         }
 
@@ -71,7 +71,7 @@
             height: auto;
             border: 2px solid black;
             margin-left: 290px;
-            margin-top: 90px;
+            margin-top: 50px;
             background-color: black;
             border-radius: 12px;
         }
@@ -166,11 +166,11 @@
                             @await Component.InvokeAsync("TypeMenu")
                         </li>
                         @*<li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Fruits" asp-action="Fruit">Fruit</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Vegetables" asp-action="Vegetable">Vegetables</a>
-                        </li>*@
+            <a class="nav-link text-light" asp-area="" asp-controller="Fruits" asp-action="Fruit">Fruit</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Vegetables" asp-action="Vegetable">Vegetables</a>
+        </li>*@
                         @if (SignInManager.IsSignedIn(User))
                         {
                             if (@User.IsInRole("Admin"))
@@ -186,11 +186,14 @@
                             if (@User.IsInRole("Seller"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="AddFood">Add Food</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="Create">Add Food</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Sellers" asp-action="Index">Items Available</a>
                                 </li>
                             }
                             else
-                            if (@User.IsInRole("User"))
+                            if (@User.IsInRole("User")) 
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="User">Account</a>
@@ -207,7 +210,7 @@
                             @*<div class="form-group" style="width:auto;height:5px">*@
                             @*<input type="text" class="form-control" placeholder="Search for a Item" name="searchString" asp-controller="Items" asp-action="Search" method="get" value="@ViewData["searchString"]">*@
                             <form class="nav navbar-form navbar-right" asp-controller="Items" asp-action="Search" method="get" style="width:auto;height:3px">
-                                    <input type="text" class="form-control" placeholder="Search for a Item" name="searchString" value="@ViewData["searchString"]">
+                                <input type="text" class="form-control" placeholder="Search for a Item" name="searchString" value="@ViewData["searchString"]">
                             </form>
                         </li>
                     </ul>

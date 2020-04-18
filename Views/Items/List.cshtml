@@ -1,7 +1,7 @@
 ﻿
-@*@using TheFoodStapleEx.Models.ViewModel
+@using TheFoodStapleEx.Models.ViewModel
 @model ItemListViewModel
-@{
+@*@{
     ViewData["Title"] = "List";
 }
 
@@ -32,7 +32,7 @@
 
 @*Using Partial View*@
     <div>
-        <h2>All Items Show here</h2>
+        <h2>@Model.CurrentCategory</h2>
         @{
             <div class="form-row" style="background-color:cornflowerblue;">
                 @foreach (var item in Model.Items)

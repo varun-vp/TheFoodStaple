@@ -39,7 +39,7 @@ namespace TheFoodStapleEx.Controllers
             if(string.IsNullOrEmpty(_category))
             {
                 items = _itemRepository.Items.OrderBy(n => n.ItemId);
-                currentCategory = "All of the above";
+                currentCategory = "All Categories";
             }
             else
             {

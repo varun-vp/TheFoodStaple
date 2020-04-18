@@ -15,7 +15,7 @@ namespace TheFoodStapleEx.Controllers
             return View();
         }
         [Authorize(Roles = "Admin,User")]
-        public IActionResult YourOrder()
+        public IActionResult YourOrders()
         {
             return View();
         }
